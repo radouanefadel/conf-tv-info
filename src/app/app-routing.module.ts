@@ -10,7 +10,10 @@ const routes: Routes = [
 		path: '',
 		pathMatch: 'full',
 		redirectTo: '/home',
-	},
+	}, {
+    path: 'tv-shows',
+    component: Pages.TvShowsComponent,
+  }
 ];
 
 @NgModule({
