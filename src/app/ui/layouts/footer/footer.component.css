@@ -1,0 +1,38 @@
+#sticky-footer {
+	border-top: 2px solid #ffc106;
+	box-shadow: 0px 2px 16px 2px rgb(56, 41, 1);
+}
+
+.footer-copy {
+	background-color: #202326;
+}
+
+.social a {
+	margin: 0 8px;
+	opacity: 0.75;
+	font-size: 16pt;
+}
+
+.social a:hover {
+	opacity: 1;
+}
+
+#social-facebook {
+	color: #3b5998 !important;
+}
+
+#social-twitter {
+	color: #00aced !important;
+}
+
+#social-youtube {
+	color: #bb0000 !important;
+}
+
+#social-instagram {
+	color: #cd201f !important;
+}
+
+#social-linkedin {
+	color: #007bb5 !important;
+}
