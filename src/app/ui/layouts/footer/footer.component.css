@@ -1,5 +1,7 @@
 #sticky-footer {
-	border-top: 2px solid #ffc106;
+	position: fixed;
+	bottom: 0;
+	border-top: 2px solid #ffc106 !important;
 	box-shadow: 0px 2px 16px 2px rgb(56, 41, 1);
 }
 
