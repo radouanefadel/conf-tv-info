@@ -3,10 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { Pages } from './ui';
 
 const routes: Routes = [
-  {
-    path: 'home',
+	{
+		path: 'home',
 		component: Pages.HomeComponent,
-  }, {
+	}, {
 		path: '',
 		pathMatch: 'full',
 		redirectTo: '/home',
@@ -16,9 +16,12 @@ const routes: Routes = [
 	}, {
 		path: 'tv-shows',
 		component: Pages.TvShowsComponent,
-  	},  {
+	}, {
 		path: 'about',
 		component: Pages.AboutComponent,
+	}, {
+		path: '**',
+		component: Pages.NotFoundComponent,
 	}
 ];
 

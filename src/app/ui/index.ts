@@ -3,6 +3,7 @@ import {
 	AboutComponent,
 	EpisodesComponent,
 	HomeComponent,
+	NotFoundComponent,
 	TvShowComponent,
 	TvShowsComponent,
 	TvShowWidgetComponent,
@@ -15,6 +16,7 @@ export const Layouts: Array<any> =  [
 
 export const Components: Array<any> = [
 	EpisodesComponent,
+	NotFoundComponent,
 	TvShowComponent,
 	TvShowsComponent,
 	TvShowWidgetComponent,
@@ -23,6 +25,7 @@ export const Components: Array<any> = [
 export const Pages: any = {
 	HomeComponent,
 	AboutComponent,
+	NotFoundComponent,
 	TvShowComponent,
 	TvShowsComponent,
 }
