@@ -14,4 +14,5 @@ export interface TvShow {
     premiered: string|Date;
     ended?: string|Date;
     schedule: Schedule;
+    runtime: number;
 }

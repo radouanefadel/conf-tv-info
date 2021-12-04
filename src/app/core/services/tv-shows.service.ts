@@ -19,4 +19,8 @@ export class TvShowsService extends BaseService{
 	public findByPage(page: number): Observable<Array<TvShow>> {
 		return this.http.get<Array<TvShow>>(`${this.endPoint}?page=${page}`);
 	}
+
+	public findOneById(id: number): Observable<TvShow> {
+		return this.http.get<TvShow>(`${this.endPoint}/${id}`);
+	}
 }

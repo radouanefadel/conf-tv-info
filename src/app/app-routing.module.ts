@@ -11,8 +11,11 @@ const routes: Routes = [
 		pathMatch: 'full',
 		redirectTo: '/home',
 	}, {
-    path: 'tv-shows',
-    component: Pages.TvShowsComponent,
+		path: 'tv-shows/:id',
+		component: Pages.TvShowComponent,
+	}, {
+		path: 'tv-shows',
+		component: Pages.TvShowsComponent,
   }
 ];
 

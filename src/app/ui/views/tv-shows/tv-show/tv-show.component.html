@@ -1,0 +1,77 @@
+<div class="container h-100 pt-3">
+	<div *ngIf="!tvShow && !notFound" class="h-100 w-100 d-flex">
+		<div class="spinner-border text-dark align-self-center mx-auto">
+			<span class="visually-hidden">Loading...</span>
+		</div>
+	</div>
+	<div *ngIf="!!tvShow">
+		<div class="card w-100 p-3 mb-3 shadow-lg">
+			<div class="row">
+				<diV class="col-sm-4 col-md-3">
+					<img src="{{ tvShow.image.original }}" alt="tvShow.name" class="img-fluid shadow-lg">
+					<div class="d-flex justify-content-between mt-2">
+						<div class="h4 fw-bold">{{ tvShow.name }}</div>
+						<div class="h4">
+							<i class="bi bi-star-fill text-warning"></i>
+							{{ tvShow.rating.average || 6.5 }}
+						</div>
+					</div>
+				</diV>
+				<div class="col-sm-8 col-md-9 text-center">
+					<div *ngIf="!!tvShow.genres?.length" class="d-block border-top border-bottom border-warning py-2 bg-dark">
+						<span *ngFor="let genre of tvShow.genres" class="badge bg-warning text-dark mx-2">
+							{{ genre }}
+						</span>
+					</div>
+					<p class="lead" [innerHTML]="tvShow.summary"></p>
+					<div class="d-flex justify-content-between border-top border-bottom border-secondary p-2 bg-light bg-gradient">
+						<div class="title">
+							<i class="bi bi-stopwatch text-black-50"></i>
+							<span class="d-block text-uppercase small">{{ tvShow.runtime }} Min</span>
+						</div>
+						<div class="title">
+							<i class="bi bi-calendar3 text-black-50"></i>
+							<span class="ms-1 bw-bold text-uppercase text-black-50">Premiered</span>
+							<span class="d-block small">{{ tvShow.premiered | date:'mediumDate' }}</span>
+						</div>
+						<div class="title">
+							<i class="bi bi-calendar3 text-black-50"></i>
+							<span class="ms-1 bw-bold text-uppercase text-black-50">Ended</span>
+							<span class="d-block small">{{ tvShow.ended | date:'mediumDate' }}</span>
+						</div>
+					</div>
+					<div class="d-block text-center mt-2">
+						<div>
+							<span class="d-block">AT</span>
+							<span class="fw-bold display-6">{{ '2000-01-01 ' + tvShow.schedule.time | date:'shortTime' }}</span>
+						</div>
+						<div>
+							<span *ngFor="let day of tvShow.schedule.days" class="badge bg-warning text-dark mx-2">
+								{{ day }}
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div *ngIf="!!seasons.length" class="row g-3 justify-content-center">
+			<div *ngFor="let season of seasons" class="col-sm-4 col-md-3">
+				<div class="card h-100">
+					<img [src]="season.image?.original || tvShow.image.original" class="card-img-top" alt="{{ tvShow + ' ' + season.number }}">
+					<div class="card-body">
+						<div class="d-flex justify-content-between">
+							<div class="card-title fw-bolder">
+								S{{ season.number }}
+							</div>
+							<button class="btn btn-sm btn-dark text-warning text-uppercase">
+								<i class="bi bi-play-fill"></i>
+								{{ season.episodeOrder }} episodes
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div style="height: 200px;"></div>
+</div>
