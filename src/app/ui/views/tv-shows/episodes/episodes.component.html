@@ -1,0 +1,38 @@
+<div class="offcanvas offcanvas-end" tabindex="-1" id="seasonEpisodes" aria-labelledby="offcanvasSeasonEpisodes">
+	<div class="offcanvas-header border-bottom border-warning bg-dark shadow-lg">
+		<h5 *ngIf="!!season" class="offcanvas-title text-uppercase fw-bold text-warning" id="seasonEpisodesLabel">Season {{ season.number}}</h5>
+		<button type="button" class="btn-close text-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	</div>
+	<div class="offcanvas-body">
+		<div *ngIf="!!episodes.length">
+			<div *ngFor="let episode of episodes" class="card shadow-lg border-0 my-2">
+				<img class="card-img-top" [src]="episode.image?.original" alt="{{ episode.name }}" />
+				<div class="card-body">
+					<div class="d-flex justify-content-between">
+						<div class="card-title fw-bold">
+							{{ episode.name }}
+						</div>
+						<div class="fw-bold">
+							<i class="bi bi-star-fill text-warning"></i>
+							{{ episode.rating.average || 6.5 }}
+						</div>
+					</div>
+					<div class="d-flex justify-content-between align-items-center">
+						<div class="text-uppercase">
+							<i class="bi bi-clock"></i>
+							{{ episode.runtime }} min
+						</div>
+						<div>
+							<a [href]="'#summary-' + episode.id" class="text-decoration-none text-black fs-3" data-bs-toggle="collapse" role="button" aria-expanded="false" [attr.aria-controls]="'summary-' + episode.id">
+								<i class="bi bi-play-circle-fill"></i>
+							</a>
+						</div>
+					</div>
+					<div class="collapse" [id]="'summary-' + episode.id">
+						<p [innerHtml]="episode.summary"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

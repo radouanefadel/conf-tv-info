@@ -56,15 +56,15 @@
 		</div>
 		<div *ngIf="!!seasons.length" class="row g-3 justify-content-center">
 			<div *ngFor="let season of seasons" class="col-sm-4 col-md-3">
-				<div class="card h-100">
+				<div class="card h-100 shadow-lg">
 					<img [src]="season.image?.original || tvShow.image.original" class="card-img-top" alt="{{ tvShow + ' ' + season.number }}">
 					<div class="card-body">
 						<div class="d-flex justify-content-between">
 							<div class="card-title fw-bolder">
 								S{{ season.number }}
 							</div>
-							<button class="btn btn-sm btn-dark text-warning text-uppercase">
-								<i class="bi bi-play-fill"></i>
+							<button (click)="selectSeason(season)" class="btn btn-sm btn-dark text-warning text-uppercase" data-bs-toggle="offcanvas" data-bs-target="#seasonEpisodes" aria-controls="seasonEpisodes">
+								<i class="bi bi-collection-play-fill"></i>
 								{{ season.episodeOrder }} episodes
 							</button>
 						</div>
@@ -73,5 +73,6 @@
 			</div>
 		</div>
 	</div>
+	<app-episodes [season]="selectedSeason"></app-episodes>
 	<div style="height: 200px;"></div>
 </div>

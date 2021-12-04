@@ -12,6 +12,7 @@ export class TvShowComponent implements OnInit {
 	tvShow: TvShow|any;
 	seasons: Array<Season> = [];
 	notFound: boolean = false;
+	selectedSeason: Season|undefined;
 	constructor(
 		private readonly route: ActivatedRoute,
 		private readonly showService: TvShowsService,
@@ -41,5 +42,6 @@ export class TvShowComponent implements OnInit {
 			});
 		});
 	}
-	
+
+	selectSeason(season: Season): void { this.selectedSeason = season; }
 }
