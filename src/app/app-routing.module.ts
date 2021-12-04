@@ -16,7 +16,10 @@ const routes: Routes = [
 	}, {
 		path: 'tv-shows',
 		component: Pages.TvShowsComponent,
-  }
+  	},  {
+		path: 'about',
+		component: Pages.AboutComponent,
+	}
 ];
 
 @NgModule({

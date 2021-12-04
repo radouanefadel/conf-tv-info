@@ -1,5 +1,6 @@
 import { FooterComponent, HeaderComponent } from './layouts';
 import { 
+	AboutComponent,
 	EpisodesComponent,
 	HomeComponent,
 	TvShowComponent,
@@ -21,6 +22,7 @@ export const Components: Array<any> = [
 
 export const Pages: any = {
 	HomeComponent,
+	AboutComponent,
 	TvShowComponent,
 	TvShowsComponent,
 }
