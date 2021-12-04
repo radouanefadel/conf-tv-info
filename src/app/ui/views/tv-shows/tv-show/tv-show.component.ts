@@ -33,13 +33,10 @@ export class TvShowComponent implements OnInit {
 			const id: number = params['id'];
 			$c.showService.findOneById(id).subscribe((item: TvShow) => {
 				$c.tvShow = item;
-				$c.notFound = !item;
-				if (!$c.notFound) {
-					$c.seasonService.findSeasonsByShowId(id).subscribe((seasons: Array<Season>) => {
-						$c.seasons = seasons;
-					});
-				}
-			});
+				$c.seasonService.findSeasonsByShowId(id).subscribe((seasons: Array<Season>) => {
+					$c.seasons = seasons;
+				});
+			}, (error: any) => { $c.notFound = true; });
 		});
 	}
 

@@ -73,6 +73,25 @@
 			</div>
 		</div>
 	</div>
+	<div *ngIf="notFound" class="h-100 w-100 d-flex">
+		<div class="w-100 text-center align-self-center">
+			<div class="display-1 fw-bold text-danger">
+				404
+			</div>
+			<div class="d-block display-6 text-secondary">
+				<i class="bi bi-emoji-dizzy"></i>
+			</div>
+			<p class="fw-bold">
+				Sorry, we couldn't find the tv show you were looking for.
+			</p>
+			<div class="d-block">
+				<a [routerLink]="['/tv-shows']" class="btn btn-sm btn-danger shadow-lg">
+					<i class="bi bi-camera-reels"></i>
+					<span class="ms-3 text-uppercase">Explore TV shows</span>
+				</a>
+			</div>
+		</div>
+	</div>
 	<app-episodes [season]="selectedSeason"></app-episodes>
 	<div style="height: 200px;"></div>
 </div>
